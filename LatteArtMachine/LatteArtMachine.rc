@@ -1,0 +1,335 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 日本語 resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_JPN)
+#ifdef _WIN32
+LANGUAGE LANG_JAPANESE, SUBLANG_DEFAULT
+#pragma code_page(932)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_JPN)\r\n"
+    "LANGUAGE 17, 1\r\n"
+    "#pragma code_page(932)\r\n"
+    "#include ""res\\LatteArtMachine.rc2""  // Microsoft Visual C++ 以外で編集されたリソース\r\n"
+    "#include ""afxres.rc""     // 標準コンポーネント\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\LatteArtMachine.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 235, 55
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "バージョン情報 LatteArtMachine"
+FONT 9, "MS UI Gothic", 0, 0, 0x1
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "LatteArtMachine Version 1.0",IDC_STATIC,40,10,119,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) 2012",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "OK",IDOK,178,7,50,16,WS_GROUP
+END
+
+IDD_LATTEARTMACHINE_DIALOG DIALOGEX 0, 0, 419, 397
+STYLE DS_SETFONT | DS_MODALFRAME | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "LatteArtMachine"
+MENU IDR_MENUBAR
+FONT 9, "MS UI Gothic", 0, 0, 0x1
+BEGIN
+    PUSHBUTTON      "接続",IDC_CONNECT,6,12,50,14
+    PUSHBUTTON      "切断",IDC_DISCONNECT,66,12,50,14
+    PUSHBUTTON      "トルクON",IDC_TRQUE_ON,72,54,50,14
+    CONTROL         "サーボ1",IDC_CHECK_SERVO1,"Button",BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,18,54,37,10
+    CONTROL         "サーボ2",IDC_CHECK_SERVO2,"Button",BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,18,66,37,10
+    PUSHBUTTON      "トルクOFF",IDC_TRQUE_OFF,132,54,50,14
+    GROUPBOX        "動作デバッグ",IDC_STATIC,6,36,186,102
+    EDITTEXT        IDC_EDIT_SERVO1,42,96,24,14,ES_RIGHT | ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_SERVO2,42,114,24,14,ES_RIGHT | ES_AUTOHSCROLL
+    LTEXT           "サーボ1",IDC_STATIC,18,100,22,8
+    LTEXT           "サーボ2",IDC_STATIC,18,117,22,8
+    LTEXT           "deg",IDC_STATIC,72,102,11,8
+    LTEXT           "deg",IDC_STATIC,72,120,11,8
+    PUSHBUTTON      "指定角度回転",IDC_DIRECTION_DEG,90,114,50,14
+    CONTROL         131,IDC_PICTURE_LATTEARTMACHINE,"Static",SS_BITMAP,204,144,207,241
+    PUSHBUTTON      "読み込み",IDC_LOADCSV,354,48,48,14
+    LTEXT           "",IDC_STATIC_CSVPATH,210,66,192,12,SS_SUNKEN | SS_ENDELLIPSIS
+    PUSHBUTTON      "ラテアート開始",IDC_START_LATTEART,270,90,134,36
+    GROUPBOX        "データプロット",IDC_STATIC,204,36,204,102
+    EDITTEXT        IDC_EDIT_VIEWSTATE,6,144,186,222,ES_MULTILINE | ES_READONLY | NOT WS_BORDER | WS_VSCROLL,WS_EX_STATICEDGE
+    PUSHBUTTON      "Write ON",IDC_BUTTON_WRITE_ON,72,72,50,14
+    PUSHBUTTON      "Write OFF",IDC_BUTTON_WRITE_OFF,132,72,50,14
+    PUSHBUTTON      "キャリブレーション",IDC_START_CALIBRATION,210,90,54,36
+    PUSHBUTTON      "Logクリア",IDC_CLEAR_LOG,138,372,50,14
+END
+
+IDD_CONNECTDLG DIALOGEX 0, 0, 247, 89
+STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "通信設定"
+FONT 9, "ＭＳ Ｐゴシック", 0, 0, 0x0
+BEGIN
+    PUSHBUTTON      "キャンセル",IDCANCEL,192,64,50,18
+    PUSHBUTTON      "適用",IDC_SAVECHANGES,138,64,50,18
+    LTEXT           "COMポート",IDC_STATIC,12,14,48,8
+    LTEXT           "通信速度",IDC_STATIC,12,32,48,8
+    COMBOBOX        IDC_COMBO_COMPORT,60,9,48,30,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_BAUD,60,28,48,30,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "データビット",IDC_STATIC,12,50,42,8
+    LTEXT           "ストップビット",IDC_STATIC,12,68,42,8
+    COMBOBOX        IDC_COMBO_BITDATA,60,46,48,30,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_BITSTOP,60,66,48,30,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_SERVODLG DIALOGEX 0, 0, 239, 139
+STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "サーボ設定"
+FONT 9, "ＭＳ Ｐゴシック", 0, 0, 0x0
+BEGIN
+    PUSHBUTTON      "キャンセル",IDCANCEL,180,114,50,18
+    COMBOBOX        IDC_COMBO_OLDSERVOID,49,24,48,30,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "現サーボID",IDC_STATIC,12,27,34,8
+    PUSHBUTTON      "OK",IDC_WRITE_SERVOID,120,114,50,18
+    COMBOBOX        IDC_COMBO_NEWSERVOID,49,42,48,30,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "新サーボID",IDC_STATIC,12,45,34,8
+    GROUPBOX        "",IDC_STATIC,6,6,102,60
+    CONTROL         "正転",IDC_RADIO_SERVO1_TURN,"Button",BS_AUTORADIOBUTTON | WS_GROUP,162,24,30,10
+    CONTROL         "逆転",IDC_RADIO_SERVO1_RETURN,"Button",BS_AUTORADIOBUTTON,193,24,30,10
+    CONTROL         "正転",IDC_RADIO_SERVO2_TURN,"Button",BS_AUTORADIOBUTTON | WS_GROUP,162,42,30,10
+    CONTROL         "逆転",IDC_RADIO_SERVO2_RETURN,"Button",BS_AUTORADIOBUTTON,193,42,30,10
+    LTEXT           "サーボ1",IDC_STATIC,132,26,24,8
+    LTEXT           "サーボ2",IDC_STATIC,132,44,24,8
+    GROUPBOX        "",IDC_STATIC,120,6,108,60
+    CONTROL         "サーボID書き換え",IDC_RADIO_SELECT_ID,"Button",BS_AUTORADIOBUTTON | WS_GROUP,12,6,68,10
+    CONTROL         "サーボ正逆転",IDC_RADIO_SELECT_DIRECTION,"Button",BS_AUTORADIOBUTTON,126,6,57,10
+    LTEXT           "Write ON",IDC_STATIC,13,93,27,8
+    EDITTEXT        IDC_EDIT_WRITEON,49,90,40,14,ES_RIGHT | ES_AUTOHSCROLL
+    LTEXT           "Write OFF",IDC_STATIC,13,111,31,8
+    EDITTEXT        IDC_EDIT_WRITEOFF,49,108,40,14,ES_RIGHT | ES_AUTOHSCROLL
+    GROUPBOX        "Writeサーボ設定",IDC_STATIC,6,78,108,54
+    LTEXT           "deg",IDC_STATIC,90,96,11,8
+    LTEXT           "deg",IDC_STATIC,90,114,11,8
+END
+
+IDD_CALIBDLG DIALOGEX 0, 0, 148, 111
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "キャリブレーション設定"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "キャンセル",IDCANCEL,78,84,60,18
+    EDITTEXT        IDC_EDIT_CUPDIAMETER,84,12,30,14,ES_RIGHT | ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_EDIT_CALIBREPEAT,84,30,30,14,ES_RIGHT | ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "コップ直径",IDC_STATIC,12,12,72,12,SS_CENTERIMAGE
+    LTEXT           "キャリブレーション回数",IDC_STATIC,12,30,72,12,SS_CENTERIMAGE
+    LTEXT           "mm",IDC_STATIC,120,18,12,8
+    LTEXT           "回",IDC_STATIC,120,36,9,8
+    PUSHBUTTON      "適用",IDC_SAVECHANGES,6,84,60,18
+    EDITTEXT        IDC_EDIT_ACCURACY,84,60,30,14,ES_RIGHT | ES_AUTOHSCROLL
+    LTEXT           "座標補間精度",IDC_STATIC,12,60,72,12,SS_CENTERIMAGE
+    LTEXT           "mm/dot",IDC_STATIC,120,66,25,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,0
+ PRODUCTVERSION 1,0,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041103a4"
+        BEGIN
+            VALUE "CompanyName", "Monozukuri Garage"
+            VALUE "FileDescription", "Monozukuri Garage"
+            VALUE "FileVersion", "1.0.0.0"
+            VALUE "InternalName", "LatteArtMachine.exe"
+            VALUE "LegalCopyright", "(C)Monozukuri Garage.  All rights reserved."
+            VALUE "OriginalFilename", "LatteArtMachine.exe"
+            VALUE "ProductName", "Latte Art Machine"
+            VALUE "ProductVersion", "1.0.0.0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x411, 932
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_LATTEARTMACHINE_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 412
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 390
+    END
+
+    IDD_CONNECTDLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 240
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 82
+    END
+
+    IDD_SERVODLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 232
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 132
+    END
+
+    IDD_CALIBDLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 141
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 104
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENUBAR MENU 
+BEGIN
+    POPUP "ファイル(&F)"
+    BEGIN
+        MENUITEM "アプリケーションの終了(&X)",             ID_EXIT
+    END
+    POPUP "設定(&S)"
+    BEGIN
+        MENUITEM "通信設定(&C)",                    ID_SETTING_CONNECT
+        MENUITEM "サーボ設定",                       ID_SETTING_SERVO
+        MENUITEM "キャリブレーション設定",                 ID_SETTING_CALIBRATE
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_BITMAP_LATTEARTMACHINE BITMAP                  "res\\background.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_ABOUTBOX            "バージョン情報 LatteArtMachine(&A)..."
+END
+
+#endif    // 日本語 resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_JPN)
+LANGUAGE 17, 1
+#pragma code_page(932)
+#include "res\LatteArtMachine.rc2"  // Microsoft Visual C++ 以外で編集されたリソース
+#include "afxres.rc"     // 標準コンポーネント
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
